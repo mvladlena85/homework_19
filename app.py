@@ -35,3 +35,8 @@ app.debug = True
 
 if __name__ == '__main__':
     app.run(host="localhost", port=10001, debug=True)
+'''
+В БД созданы следующие пользователи:
+        u1 = User(username="vasya", password="my_little_pony", role="user")
+        u2 = User(username="oleg", password="qwerty", role="user")
+        u3 = User(username="ivan", password="P@ssw0rd", role="admin")'''

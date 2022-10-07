@@ -7,6 +7,7 @@ from implemented import user_service
 
 
 def auth_required(func):
+    """Декоратор для проверки, авторизован ли пользователь"""
     def wrapper(*args, **kwargs):
         if 'Authorization'not in request.headers:
             abort(401)
@@ -23,6 +24,7 @@ def auth_required(func):
 
 
 def admin_required(func):
+    """Декоратор ля проверки соответствия роли пользователя админу"""
     def wrapper(*args, **kwargs):
         if 'Authorization'not in request.headers:
             abort(401)

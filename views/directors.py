@@ -5,6 +5,10 @@ from dao.model.director import DirectorSchema
 from implemented import director_service
 from service.decorators import auth_required, admin_required
 
+
+"""
+Представления для обработки запросов к /directors/
+"""
 director_ns = Namespace('directors')
 
 

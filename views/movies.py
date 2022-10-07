@@ -5,6 +5,10 @@ from dao.model.movie import MovieSchema
 from implemented import movie_service
 from service.decorators import auth_required, admin_required
 
+
+"""
+Представления для обработки запросов к /movies/
+"""
 movie_ns = Namespace('movies')
 
 

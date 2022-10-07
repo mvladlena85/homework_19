@@ -5,6 +5,9 @@ from dao.model.genre import GenreSchema
 from implemented import genre_service
 from service.decorators import auth_required, admin_required
 
+"""
+Представления для обработки запросов к /genres/
+"""
 genre_ns = Namespace('genres')
 
 

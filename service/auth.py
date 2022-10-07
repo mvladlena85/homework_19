@@ -7,8 +7,15 @@ import jwt
 
 from config import Config
 
+"""
+Вспомогательные функции для реализации авторизации пользователя
+"""
 
-def get_hash(password):
+
+def get_hash(password: str) -> bytes:
+    """
+    Хеширование пароля
+    """
     return base64.b64encode(hashlib.pbkdf2_hmac(
         Config.PWD_ALGO,
         password.encode('utf-8'),  # Convert the password to bytes
@@ -22,10 +29,12 @@ def decode_hash(password):
 
 
 def compare_passwords(password_hash, password):
+    """Валидация пароля по его хешу"""
     return hmac.compare_digest(get_hash(password), password_hash)
 
 
 def generate_token(username, password, password_hash, is_refresh=True):
+    """Генерация пары токенов: "access_token" и "refresh_token" """
     if username is None:
         return None
 
@@ -48,6 +57,7 @@ def generate_token(username, password, password_hash, is_refresh=True):
 
 
 def refresh_tokens(token):
+    """Обновление пары токенов: "access_token" и "refresh_token" по refresh_token"""
     if token is None:
         return None
 

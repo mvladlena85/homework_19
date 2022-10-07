@@ -4,6 +4,10 @@ from flask_restx import Namespace, Resource
 from implemented import user_service
 from service.auth import refresh_tokens, generate_token
 
+
+"""
+Представления для обработки запросов к /auth/ - авторизация пользователя
+"""
 auth_ns = Namespace('auth')
 
 

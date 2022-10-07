@@ -4,6 +4,10 @@ from flask_restx import Namespace, Resource
 from dao.model.user import UserSchema
 from implemented import user_service
 
+
+"""
+Представления для обработки запросов к /users/
+"""
 user_ns = Namespace('users')
 
 
